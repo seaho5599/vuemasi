@@ -16,12 +16,36 @@
           </a>
         </div>
         <div class="items-box">
-
+          <Swiper class="sw-items"
+            :modules="modules"
+            :autoplay="{
+              delay: 1000,
+              disableOnInteraction: false,
+            }"
+            :loop="true"
+            :speed="800"
+          >
+            <swiper-slide>
+                <a href="#" class="items-1"></a>
+              </swiper-slide>
+              <swiper-slide>
+                <a href="#" class="items-2"></a>
+              </swiper-slide>
+              <swiper-slide>
+                <a href="#" class="items-3"></a>
+              </swiper-slide>
+              <swiper-slide>
+                <a href="#" class="items-4"></a>
+              </swiper-slide>
+              <swiper-slide>
+                <a href="#" class="items-5"></a>
+              </swiper-slide>
+          </Swiper>
           <!-- item 슬라이드 -->
           <div class="swiper-container sw-items">
             <!-- 기본형 : 슬라이드 내용 -->
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+              <!-- <div class="swiper-slide">
                 <a href="#" class="items-1"></a>
               </div>
               <div class="swiper-slide">
@@ -35,7 +59,7 @@
               </div>
               <div class="swiper-slide">
                 <a href="#" class="items-5"></a>
-              </div>
+              </div> -->
             </div>
 
             <!-- 이동버튼 -->
@@ -99,8 +123,19 @@
 </template>
 
 <script>
+import {Autoplay,Navigation,Pagination} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/vue';
+import 'swiper/css';
 export default {
+  components:{
+    Swiper, SwiperSlide
+  },
+  setup(){
 
+    return{
+      modules:[Autoplay,Navigation,Pagination]
+    }
+  }
 }
 </script>
 

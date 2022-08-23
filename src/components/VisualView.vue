@@ -1,6 +1,15 @@
 <template>
       <section class="visual">
-        <Swiper class="sw-visual">
+        <Swiper class="sw-visual"
+          :modules="modules"
+          :autoplay="{
+            delay: 1000,
+            disableOnInteraction: false,
+          }"
+          :loop="true"
+          :speed="1000"
+          
+        >
           
           <SwiperSlide>
             <a href="#" class="sw-visual-1"></a>
