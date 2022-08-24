@@ -1,13 +1,17 @@
 <template>
       <section class="visual">
-        <Swiper class="sw-visual"
+        <Swiper 
           :modules="modules"
           :autoplay="{
-            delay: 1000,
+            delay: 2000,
             disableOnInteraction: false,
           }"
           :loop="true"
-          :speed="1000"
+          :navigation = "{
+            prevEl: '.sw-visual-prev',
+            nextEl: '.sw-visual-next'
+          }"
+          class="sw-visual"
           
         >
           
@@ -23,39 +27,21 @@
           <SwiperSlide>
             <a href="#" class="sw-visual-4"></a>
           </SwiperSlide>
-        </Swiper>
-      <div class="swiper-container sw-visual">
-        <!-- 슬라이드 내용 -->
-        <!-- <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="#" class="sw-visual-1"></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#" class="sw-visual-2"></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#" class="sw-visual-3"></a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#" class="sw-visual-4"></a>
-          </div>
-        </div> -->
-        <!-- 슬라이드 좌우버튼 -->
+          <!-- 슬라이드 좌우버튼 -->
         <button class="sw-visual-prev"></button>
         <button class="sw-visual-next"></button>
-      </div>
+        </Swiper>
     </section>
 </template>
 
 <script>
-import{Autoplay, Navigation, Pagination} from 'swiper'
+import{Autoplay, Navigation} from 'swiper'
 import {
     Swiper,
     SwiperSlide
   } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 export default {
   components:{
     Swiper,
@@ -65,7 +51,7 @@ export default {
   setup(){
 
   return{
-    modules:[Navigation, Pagination, Autoplay]
+    modules:[Navigation, Autoplay]
   }
 }
 }

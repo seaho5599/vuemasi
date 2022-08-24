@@ -5,30 +5,32 @@
           <h2>MASIGRAY <b>Franchiser</b></h2>
           <span>마시그래이 신규 매장</span>
         </div>
-        <ul class="franchiser-list clearfix">
+        <ul class="franchiser-list clearfix" v-for="(item, index) in franchData" :key="index">
+          <FranchList :id="item.id" :link="item.link" :img="item.img" :title="item.title"/>
 
-          <li id="store-1">
+          
+          <!-- <li id="store-1"> -->
             <!-- <a href="#"><img src="images/shop1.jpg" alt="">
               <span>합천점</span>
             </a> -->
-          </li>
-          <li id="store-2">
+          <!-- </li> -->
+          <!-- <li id="store-2"> -->
             <!-- <a href="#"><img src="images/shop2.jpg" alt="">
               <span>신천점</span>
             </a> -->
-          </li>
-          <li id="store-3">
+          <!-- </li> -->
+          <!-- <li id="store-3"> -->
             <!-- <a href="#">
               <img src="images/shop3.jpg" alt="">
               <span>복현푸르지오점</span>
             </a> -->
-          </li>
-          <li id="store-4">
+          <!-- </li> -->
+          <!-- <li id="store-4"> -->
             <!-- <a href="#">
               <img src="images/shop4.jpg" alt="">
               <span>대곡점</span>
             </a> -->
-          </li>
+          <!-- </li> -->
 
         </ul>
       </div>
@@ -36,8 +38,43 @@
 </template>
 
 <script>
+import FranchList from '@/components/FranchList.vue'
 export default {
-  props:[]
+  components:{
+    FranchList
+    },
+  setup(){
+    const franchData =[
+      // {
+      //   id : 'store-1',
+      //   link: '#',
+      //   img: '@/assets/images/shop1.jpg',
+      //   title: '합천점'
+      // },
+      // {
+      //   id : 'store-2',
+      //   link: '#',
+      //   img: '@/assets/images/shop2.jpg',
+      //   title: '신천점'
+      // },
+      // {
+      //   id : 'store-3',
+      //   link: '#',
+      //   img: '@/assets/images/shop3.jpg',
+      //   title: '복현푸르지오점'
+      // },
+      // {
+      //   id : 'store-4',
+      //   link: '#',
+      //   img: '@/assets/images/shop4.jpg',
+      //   title: '대곡점'
+      // },
+    ]
+    return{
+      franchData
+      }
+  }
+  
 }
 </script>
 

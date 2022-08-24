@@ -161,7 +161,7 @@ export default {
         ]
       },
     ]
-  const gnbMenu = [
+    const gnbMenu = [
       {
         link:'#',
         title:'마시그래이',
@@ -283,8 +283,9 @@ export default {
         ]
       },
     ]
+    
     return{
-      mbMenuData,gnbMenu
+      mbMenuData, gnbMenu
     }
   }
 }

@@ -16,14 +16,22 @@
           </a>
         </div>
         <div class="items-box">
-          <Swiper class="sw-items"
+          <Swiper 
             :modules="modules"
             :autoplay="{
               delay: 1000,
               disableOnInteraction: false,
             }"
             :loop="true"
-            :speed="800"
+            :navigation = "{
+            prevEl: '.sw-items-prev',
+            nextEl: '.sw-items-next'
+            }"
+            :pagination = "{
+              el: '.sw-items-pg',
+              clickable: true
+            }"
+            class="sw-items"
           >
             <swiper-slide>
                 <a href="#" class="items-1"></a>
@@ -40,39 +48,15 @@
               <swiper-slide>
                 <a href="#" class="items-5"></a>
               </swiper-slide>
-          </Swiper>
-          <!-- item 슬라이드 -->
-          <div class="swiper-container sw-items">
-            <!-- 기본형 : 슬라이드 내용 -->
-            <div class="swiper-wrapper">
-              <!-- <div class="swiper-slide">
-                <a href="#" class="items-1"></a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#" class="items-2"></a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#" class="items-3"></a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#" class="items-4"></a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#" class="items-5"></a>
-              </div> -->
-            </div>
-
-            <!-- 이동버튼 -->
+              <!-- 이동버튼 -->
             <button class="sw-items-prev"></button>
             <button class="sw-items-next"></button>
-
-            <!-- 콘트롤 -->
             <div class="sw-items-control">
               <!-- Pagination -->
-              <div class="sw-items-pg"></div>
+            <div class="sw-items-pg"></div>
             </div>
-
-          </div>
+          </Swiper>
+          <!-- item 슬라이드 -->
 
         </div>
         <div class="items-box">
@@ -126,6 +110,8 @@
 import {Autoplay,Navigation,Pagination} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 export default {
   components:{
     Swiper, SwiperSlide
@@ -138,7 +124,25 @@ export default {
   }
 }
 </script>
+<style>
+.sw-items-pg .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 0.5;
+  margin: 5px;
+  border-radius: 5px;
 
+  transition: all 0.5s;
+}
+
+.sw-items-pg .swiper-pagination-bullet-active {
+  width: 30px;
+  background-color: hotpink;
+  opacity: 1;
+}
+
+</style>
 <style scoped>
 /* items */
 .items {
@@ -276,22 +280,6 @@ export default {
   z-index: 9;
 }
 
-.sw-items-pg .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  opacity: 0.5;
-  margin: 5px;
-  border-radius: 5px;
-
-  transition: all 0.5s;
-}
-
-.sw-items-pg .swiper-pagination-bullet-active {
-  width: 30px;
-  background-color: hotpink;
-  opacity: 1;
-}
 
 
 /* 링크 */
