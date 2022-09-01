@@ -116,7 +116,7 @@ export default {
   position: relative;
   display: block;
 }
-@media all and(max-width:1000px){
+@media all and (max-width:1000px){
   .footer-menu li{
     padding: 0 2.1vw;
   }

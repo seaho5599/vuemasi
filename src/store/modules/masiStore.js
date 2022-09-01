@@ -151,7 +151,7 @@ const state = {
 const actions = {};
 const mutations = {};
 const getters = {
-  getMbMenuData(state){
+  getMenuData(state){
     return state.mbMenuData
   },
   getFranchData(state){

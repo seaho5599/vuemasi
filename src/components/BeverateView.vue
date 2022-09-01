@@ -8,23 +8,16 @@
         <span>마시그래이의 다양한 메뉴를 맛보세요</span>
       </div>
       <!-- Bevarage 슬라이드  -->
-      <Swiper 
-            :modules="modules" 
-            :autoplay="{
+      <Swiper :modules="modules" :autoplay="{
               delay: 1000,
               disableOnInteraction: false,
-            }" 
-            :loop="true" 
-            :navigation="{
+            }" :loop="true" :navigation="{
               prevEl: '.sw-bevarage-prev',
               nextEl: '.sw-bevarage-next'
-            }" 
-            :pagination="{
+            }" :pagination="{
               el: '.sw-bevarage-pg',
               type: 'fraction'
-            }"
-            class="sw-bevarage" 
-            >
+            }" class="sw-bevarage">
         <swiper-slide>
           <a href="#">
             <img :src="require('@/assets/images/menu_slide01.png')" alt="">
@@ -83,7 +76,6 @@
     display: block;
     background: url('@/assets/images/main-menu-cover.jpg') no-repeat center;
     background-size: cover;
-
     padding: 100px 0;
   }
 
@@ -116,7 +108,6 @@
   .sw-bevarage {
     width: 100%;
     height: 560px;
-    /* background-color: hotpink; */
   }
 
   .sw-bevarage a {

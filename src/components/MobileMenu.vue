@@ -35,16 +35,19 @@
 
 <script>
   import {
-    onMounted, computed
+    onMounted,
+    computed
   } from 'vue';
   import $ from 'jquery';
-  import { useStore } from 'vuex'
+  import {
+    useStore
+  } from 'vuex'
 
   export default {
-    
+
     setup() {
       const store = useStore();
-      const mbMenuData = computed(() => store.getters.getMbMenuData)
+      const mbMenuData = computed(() => store.getters.getMenuData)
       onMounted(() => {
         // 모바일 메뉴 기능
         // 1. 펼침메뉴 기능
@@ -54,10 +57,8 @@
           $(this).click(function (event) {
             // href 를 막아준다.
             event.preventDefault();
-
             // 클릭하면 현재 포커스 클래스가 있는지 검토
             let temp = $(this).hasClass('mb-menu-focus');
-
             if (temp) {
               // 포커스 색상 적용해제
               $(this).removeClass('mb-menu-focus');
@@ -76,12 +77,8 @@
               $(this).addClass('mb-menu-focus');
               //아이콘을 돌리자
               $(this).addClass('mb-icon-rot');
-
-
               // 클릭된 번호만 보여라
               mb_submenu.eq(index).show();
-
-
             }
 
           });
@@ -123,7 +120,6 @@
             mb_mainmenu.removeClass('mb-menu-focus');
             mb_mainmenu.removeClass('mb-icon-rot');
             mb_submenu.hide();
-
           }
         });
       })
@@ -287,12 +283,6 @@
     color: #4abbc3 !important;
   }
 
-  /* .mb-menu > li:hover > a {
-  color: #4abbc3;
-}
-.mb-menu > li:hover > .mb-submenu {
-  display: block;
-} */
   .mb-submenu {
     position: relative;
     display: none;

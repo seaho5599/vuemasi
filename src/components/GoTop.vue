@@ -1,5 +1,5 @@
 <template>
-  <!-- 위로가기 -->
+
   <button class="gotop"></button>
 </template>
 
@@ -13,11 +13,9 @@
       onMounted(() => {
         let go_top = $('.gotop');
         go_top.click(function () {
-
           $('html').animate({
             scrollTop: 0
           }, 1000);
-
         });
       })
       return {}
@@ -26,7 +24,6 @@
 </script>
 
 <style scoped>
-  /* 위로가기 */
   .gotop {
     position: fixed;
     right: 20px;

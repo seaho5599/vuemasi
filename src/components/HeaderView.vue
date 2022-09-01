@@ -37,8 +37,10 @@
 
   export default {
     setup() {
+      // vuex 의 모든 기능을 쓰려고 생성
       const store = useStore();
-      const gnbData = computed(() => store.getters.getMbMenuData)
+      // vuex 의 state 변화 감시
+      const gnbData = computed(() => store.getters.getMenuData)
 
       onMounted(() => {
         // 메인 메뉴 기능
