@@ -13,7 +13,7 @@
         <a href="index.html" class="logo">마시그래이</a>
         <div class="gnb">
           <ul class="menu">
-            <li v-for="(item, index) in gnbmenu" :key="index">
+            <li v-for="(item, index) in gnbData" :key="index">
               <a :href="item.link">{{item.title}}</a>
               <ul class="submenu">
                 <li v-for="(subitem, subindex) in item.subArr" :key="subindex">
@@ -30,12 +30,16 @@
 
 <script>
   import {
-    onMounted
+    onMounted, computed
   } from 'vue';
   import $ from 'jquery';
+  import { useStore } from 'vuex'
+
   export default {
-    props:['gnbmenu'],
     setup() {
+      const store = useStore();
+      const gnbData = computed(() => store.getters.getMbMenuData)
+
       onMounted(() => {
         // 메인 메뉴 기능
         let header = $('.header');
@@ -63,7 +67,9 @@
 
         });
       })
-      return {}
+      return {
+        gnbData
+      }
     }
   }
 </script>

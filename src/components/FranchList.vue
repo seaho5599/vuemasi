@@ -1,18 +1,50 @@
 <template>
-  <li :id="id">
-    <a :href="link">
-      <img :src="require(img)" alt="">
+  
+    <a class="franlist " 
+      :href="link">
+      <img :src="img" alt="">
       <span>{{title}}</span>
     </a>
-  </li>
+  
 </template>
 
 <script>
   export default {
-    props:['id','link','img','title']
+    props:['link','img','title']
   }
 </script>
 
 <style>
+
+.franlist {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.franlist img {
+  width: auto;
+  height: 324px;
+}
+
+.franlist span {
+  position: relative;
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
+@media all and (max-width:1000px){
+  .franlist img {
+    height: 32.4vw;
+  }
+
+  .franlist span {
+    margin-top: 2vw;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
 
 </style>

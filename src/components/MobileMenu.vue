@@ -20,7 +20,7 @@
       </ul>
     </div>
     <ul class="mb-menu">
-      <li v-for="(item, index) in mbmenudata" :key="index">
+      <li v-for="(item, index) in mbMenuData" :key="index">
         <a :href="item.link">{{item.title}}</a>
         <ul class="mb-submenu">
           <li v-for="(subitem, subindex) in item.subArr" :key="subindex">
@@ -35,13 +35,16 @@
 
 <script>
   import {
-    onMounted
+    onMounted, computed
   } from 'vue';
   import $ from 'jquery';
-  export default {
-    props: ['mbmenudata'],
+  import { useStore } from 'vuex'
 
+  export default {
+    
     setup() {
+      const store = useStore();
+      const mbMenuData = computed(() => store.getters.getMbMenuData)
       onMounted(() => {
         // 모바일 메뉴 기능
         // 1. 펼침메뉴 기능
@@ -124,7 +127,9 @@
           }
         });
       })
-      return {}
+      return {
+        mbMenuData
+      }
     }
   }
 </script>
