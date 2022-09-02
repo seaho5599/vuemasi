@@ -1,13 +1,10 @@
 <template>
-  <!-- 모바일 메뉴 -->
   <a href="#" class="mb-bt">
     <span></span>
     <span></span>
     <span></span>
   </a>
-  <!-- 모바일 가림막 -->
   <div class="mb-dim"></div>
-  <!-- 모바일 메뉴내용 -->
   <div class="mb-wrap">
 
     <a href="#" class="mb-close"></a>
@@ -131,7 +128,6 @@
 </script>
 
 <style scoped>
-  /*모바일 메뉴 */
   .mb-bt {
     position: fixed;
     left: 20px;

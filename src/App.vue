@@ -24,8 +24,13 @@
   import FranchView from '@/components/FranchView.vue';
   import SnsView from '@/components/SnsView.vue';
   import FooterView from '@/components/FooterView.vue';
-
-  import axios from 'axios';
+  // 공통으로 관리되는 state 를 참조한다.
+  // 여기서는 ations를 호출하는 용도로 사용.
+  // vuex를 참조하는 객체를 접근하려고 하면
+  // 아래 구문으로 접근한다.
+  import {
+    useStore
+  } from 'vuex'
 
   export default {
     name: 'App',
@@ -42,13 +47,19 @@
       FooterView
     },
     setup() {
-      // 외부에 있는 menu.json 파일을 불러온다.
-      axios.get('/data/menu.json')
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(err => console.log(err))
-      return {}
+      // 외부에 있는 menu.json 파일을 불러오기 위해서
+      // actions 를 활용한다
+      const store = useStore();
+      // actions 의 메소드(function)를 사용할때
+      // store.dispatch('메소드명')
+      console.log('step1 : despatch')
+      store.dispatch('fetchMenudata')
+      
+      
+
+      return {
+        
+      }
     }
   }
 </script>
