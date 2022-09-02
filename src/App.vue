@@ -1,4 +1,5 @@
 <template>
+  <ModalView />
   <div class="wrap">
     <GoTop />
     <FixMenu />
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+  import ModalView from '@/components/ModalView.vue'
   import GoTop from '@/components/GoTop.vue';
   import FixMenu from '@/components/FixMenu.vue';
   import MobileMenu from '@/components/MobileMenu.vue';
@@ -35,6 +37,7 @@
   export default {
     name: 'App',
     components: {
+      ModalView,
       GoTop,
       FixMenu,
       MobileMenu,

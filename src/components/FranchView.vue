@@ -25,7 +25,7 @@ export default {
   setup(){
     const store = useStore();
     const franchDataArr = computed(() => store.getters.getFranchData)
-    
+    store.dispatch('fetchFranch')
 
     return{
       franchDataArr

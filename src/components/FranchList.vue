@@ -2,7 +2,7 @@
   
     <a class="franlist " 
       :href="link">
-      <img :src="img" alt="">
+      <img :src='require(`@/assets/images/${img}`)' alt="">
       <span>{{title}}</span>
     </a>
   

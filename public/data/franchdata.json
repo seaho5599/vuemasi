@@ -2,25 +2,25 @@
   {
     
     "link": "#",
-    "img": "require('@/assets/images/shop1.jpg')",
+    "img": "shop1.jpg",
     "title": "합천점"
   },
   {
     
     "link": "#",
-    "img": "require('@/assets/images/shop2.jpg')",
+    "img": "shop2.jpg",
     "title": "신천점"
   },
   {
     
     "link": "#",
-    "img": "require('@/assets/images/shop3.jpg')",
+    "img": "shop3.jpg",
     "title": "복현푸르지오점"
   },
   {
     
     "link": "#",
-    "img": "require('@/assets/images/shop4.jpg')",
+    "img": "shop4.jpg",
     "title": "대곡점"
   }
 ]

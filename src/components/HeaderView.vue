@@ -30,7 +30,7 @@
 
 <script>
   import {
-    onMounted, computed
+    computed, onUpdated
   } from 'vue';
   import $ from 'jquery';
   import { useStore } from 'vuex'
@@ -42,7 +42,7 @@
       // vuex 의 state 변화 감시
       const gnbData = computed(() => store.getters.getMenuData)
 
-      onMounted(() => {
+      onUpdated(() => {
         // 메인 메뉴 기능
         let header = $('.header');
         let header_top = $('.header-top');
