@@ -59,11 +59,6 @@
 
         // 이벤트 바인딩 : 이벤트를 추후에 연결시켜준다.
         $.each(mb_mainmenu, function (index) {
-          $(this).on('click', function(event){
-            event.preventDefault();
-            alert(index)
-          })
-
           $(this).click(function (event) {
             // href 를 막아준다.
             event.preventDefault();
